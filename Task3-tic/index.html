@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Tic‑Tac‑Toe</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <!-- ✨ animated background -->
+  <!-- Custom background for floating Xs and Os -->
+<div class="tictactoe-bg">
+  <span class="icon x">X</span>
+  <span class="icon o">O</span>
+  <span class="icon x">X</span>
+  <span class="icon o">O</span>
+  <span class="icon x">X</span>
+  <span class="icon o">O</span>
+</div>
+
+
+  <div class="container">
+    <h1>Tic Tac Toe</h1>
+
+    <!-- ── pre‑game form ─────────────────────────────── -->
+    <div id="setupPanel">
+      <input type="text" id="playerName" placeholder="Your name…"/>
+      <select id="mode">
+        <option value="ai">Play vs AI</option>
+        <option value="pvp">Two Players</option>
+      </select>
+      <select id="difficulty">
+        <option value="easy">Easy 🤓</option>
+        <option value="medium">Medium 😎</option>
+        <option value="hard" selected>Hard 🧠</option>
+      </select>
+      <input type="number" id="timeLimit" min="3" max="30" value="10" title="Seconds per move"/>
+      <button id="startBtn">Start Game</button>
+    </div>
+
+    <!-- ── active game area ──────────────────────────── -->
+    <div id="gameArea" hidden>
+      <div class="scoreboard">
+        <p>👤 <span id="playerLabel">You</span>: <span id="scoreX">0</span></p>
+        <p><span id="opponentLabel">AI</span>: <span id="scoreO">0</span></p>
+      </div>
+
+      <div class="timer">⏱ <span id="timeLeft">10</span>s</div>
+
+      <div class="game-board" id="board"></div>
+      <p class="status" id="status"></p>
+
+      <button id="rematchBtn">🔁 Rematch</button>
+      <button id="newGameBtn">🚀 New Setup</button>
+    </div>
+  </div>
+
+  <!-- libs -->
+  <script src="script.js"></script>
+</body>
+</html>

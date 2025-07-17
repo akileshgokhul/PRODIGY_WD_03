@@ -1,0 +1,144 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #2c3e50, #3498db);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(8px);
+  color: white;
+  width: 90%;
+  max-width: 400px;
+}
+
+h1 {
+  margin-bottom: 20px;
+  font-size: 2.5em;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.2);
+  font-size: 2.5rem;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  transition: background 0.3s ease;
+}
+
+.cell:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.cell.win {
+  background: #27ae60 !important;
+}
+
+.status {
+  margin: 20px 0;
+  font-size: 1.2rem;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+button:hover {
+  background-color: #c0392b;
+}
+/* Scoreboard Styling */
+.scoreboard {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  color: #ffffff;
+  text-shadow: 0 0 3px #00ffe7;
+}
+/* setup panel */
+#setupPanel {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+#setupPanel input,
+#setupPanel select,
+#setupPanel button {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+#setupPanel select { min-width: 130px; }
+
+.timer {
+  margin: 10px 0;
+  font-size: 1.2rem;
+  color: #ffdf00;
+  text-shadow: 0 0 6px #000;
+}
+/* Custom floating icons background */
+.tictactoe-bg {
+  position: fixed;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.tictactoe-bg .icon {
+  position: absolute;
+  font-size: 4rem;
+  opacity: 0.05;
+  animation: float 20s linear infinite;
+  color: white;
+  user-select: none;
+}
+
+/* Different icon positions and delays */
+.tictactoe-bg .icon:nth-child(1) { top: 10%; left: 20%; animation-delay: 0s; }
+.tictactoe-bg .icon:nth-child(2) { top: 30%; left: 50%; animation-delay: 2s; }
+.tictactoe-bg .icon:nth-child(3) { top: 60%; left: 10%; animation-delay: 4s; }
+.tictactoe-bg .icon:nth-child(4) { top: 80%; left: 80%; animation-delay: 6s; }
+.tictactoe-bg .icon:nth-child(5) { top: 50%; left: 70%; animation-delay: 8s; }
+.tictactoe-bg .icon:nth-child(6) { top: 20%; left: 90%; animation-delay: 10s; }
+
+@keyframes float {
+  0%   { transform: translateY(0) rotate(0deg);   opacity: 0.05; }
+  50%  { transform: translateY(-30px) rotate(180deg); opacity: 0.1; }
+  100% { transform: translateY(0) rotate(360deg); opacity: 0.05; }
+}
